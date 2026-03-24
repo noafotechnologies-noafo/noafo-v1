@@ -1,0 +1,81 @@
+.place-card {
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius-md);
+  padding: 1.75rem;
+  background-color: var(--bg-card);
+  transition: all 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  box-shadow: var(--shadow-soft);
+}
+
+.place-card:hover {
+  box-shadow: var(--shadow-hover);
+  transform: translateY(-4px);
+}
+
+.card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 0.5rem;
+}
+
+.place-name {
+  margin: 0;
+  font-size: 1.35rem;
+  font-weight: 700;
+  color: var(--text-main);
+}
+
+.place-category {
+  margin: 0 0 1rem;
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.safety-tag {
+  font-size: 0.75rem;
+  font-weight: 700;
+  padding: 0.25rem 0.6rem;
+  border-radius: 12px;
+  text-transform: uppercase;
+}
+
+.tag-safe {
+  background-color: #e6f4ea;
+  color: #137333;
+}
+
+.tag-neutral {
+  background-color: #fef7e0;
+  color: #b06000;
+}
+
+.tag-unsafe {
+  background-color: #fce8e6;
+  color: #c5221f;
+}
+
+.place-description {
+  margin: 0 0 1.5rem;
+  color: var(--text-main);
+  line-height: 1.6;
+  font-size: 1.05rem;
+  flex-grow: 1;
+}
+
+.card-footer {
+  margin-top: auto;
+  padding-top: 1rem;
+  border-top: 1px solid #f0f0f0;
+}
+
+.recommendation-count {
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--accent-hover);
+}

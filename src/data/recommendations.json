@@ -1,0 +1,65 @@
+[
+  {
+    "id": 1,
+    "name": "Cafe del Mar",
+    "location": "Varkala",
+    "category": "Cafes",
+    "shortDescription": "Cozy clifftop cafe with great coffee and sea views. Vibrant after 6 PM.",
+    "recommendationsCount": 12,
+    "safetyTag": "Safe"
+  },
+  {
+    "id": 2,
+    "name": "Darjeeling Cafe",
+    "location": "Varkala",
+    "category": "Cafes",
+    "shortDescription": "Popular hangout spot with good food and relaxed vibe.",
+    "recommendationsCount": 18,
+    "safetyTag": "Safe"
+  },
+  {
+    "id": 3,
+    "name": "Zostel Varkala",
+    "location": "Varkala",
+    "category": "Stays",
+    "shortDescription": "Vibrant hostel with good security and female-only dorms.",
+    "recommendationsCount": 24,
+    "safetyTag": "Safe"
+  },
+  {
+    "id": 4,
+    "name": "Varkala Beach Surfing",
+    "location": "Varkala",
+    "category": "Things to Do",
+    "shortDescription": "Early morning surf lessons with trusted instructors.",
+    "recommendationsCount": 8,
+    "safetyTag": "Safe"
+  },
+  {
+    "id": 5,
+    "name": "Villa Maya",
+    "location": "Trivandrum",
+    "category": "Cafes",
+    "shortDescription": "Heritage restaurant offering a premium safe dining experience.",
+    "recommendationsCount": 35,
+    "safetyTag": "Safe"
+  },
+  {
+    "id": 6,
+    "name": "Napier Museum",
+    "location": "Trivandrum",
+    "category": "Things to Do",
+    "shortDescription": "Historical art and natural history museum. Safe during daylight.",
+    "recommendationsCount": 15,
+    "safetyTag": "Neutral"
+  },
+  {
+    "id": 7,
+    "name": "Central Railway Station Area",
+    "location": "Trivandrum",
+    "category": "Things to Do",
+    "shortDescription": "Busy transit hub. Best to remain cautious at night.",
+    "recommendationsCount": 2,
+    "safetyTag": "Unsafe"
+  }
+]
