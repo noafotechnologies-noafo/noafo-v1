@@ -28,6 +28,13 @@
   color: var(--text-main);
 }
 
+.place-location {
+  margin: 0.25rem 0 0.5rem;
+  font-size: 1rem;
+  color: var(--text-muted);
+  font-weight: 500;
+}
+
 .place-category {
   margin: 0 0 1rem;
   font-size: 0.875rem;

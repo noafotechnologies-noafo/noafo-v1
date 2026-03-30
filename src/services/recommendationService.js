@@ -33,7 +33,8 @@ export const addRecommendation = async (items) => {
     .insert(
       insertData.map(item => ({
         place_name: item.placeName,
-        location: item.location,
+        city: item.city,
+        state: item.state,
         category: item.category,
         description: item.description,
         safety: item.safety,

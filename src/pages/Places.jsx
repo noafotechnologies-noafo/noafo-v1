@@ -35,7 +35,10 @@ const Places = () => {
   }, []);
 
   // Extract unique locations for suggestions
-  const uniqueLocations = Array.from(new Set(places.map(p => p.location))).filter(Boolean);
+  const uniqueLocations = Array.from(new Set(places.map(p => {
+    if (p.city) return p.state ? `${p.city}, ${p.state}` : p.city;
+    return p.location;
+  }))).filter(Boolean);
 
   // Filter locations based on user input
   const locationSuggestions = uniqueLocations.filter(loc => 
@@ -43,7 +46,10 @@ const Places = () => {
   );
 
   const filteredPlaces = places.filter(place => {
-    const matchLocation = !locationSearch || (place.location && place.location.toLowerCase().includes(locationSearch.toLowerCase()));
+    const locString = place.city 
+      ? (place.state ? `${place.city}, ${place.state}` : place.city)
+      : place.location;
+    const matchLocation = !locationSearch || (locString && locString.toLowerCase().includes(locationSearch.toLowerCase()));
     const matchCategory = category === 'All' || place.category === category;
     return matchLocation && matchCategory;
   });
@@ -134,6 +140,8 @@ const Places = () => {
                   place={{
                     id: place.id,
                     name: place.place_name,
+                    city: place.city,
+                    state: place.state,
                     location: place.location,
                     category: place.category,
                     shortDescription: place.description,

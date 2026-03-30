@@ -11,6 +11,12 @@ const PlaceCard = ({ place }) => {
     }
   };
 
+  const locString = place.city 
+    ? (place.state ? `${place.city}, ${place.state}` : place.city)
+    : place.location;
+    
+  const locationText = locString ? `📍 ${locString}` : '📍 Location not specified';
+
   return (
     <div className="place-card">
       <div className="card-header">
@@ -19,6 +25,7 @@ const PlaceCard = ({ place }) => {
           {place.safetyTag}
         </span>
       </div>
+      <p className="place-location">{locationText}</p>
       <p className="place-category">{place.category}</p>
       <p className="place-description">{place.shortDescription}</p>
       <div className="card-footer">

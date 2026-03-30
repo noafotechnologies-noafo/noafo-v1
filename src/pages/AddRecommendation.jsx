@@ -6,7 +6,8 @@ import './AddRecommendation.css';
 const AddRecommendation = () => {
   const [formData, setFormData] = useState({
     name: '',
-    location: '',
+    city: '',
+    state: '',
     safety: 'Safe',
   });
   
@@ -41,8 +42,8 @@ const AddRecommendation = () => {
       return;
     }
 
-    if (!formData.location.trim()) {
-      setErrorMsg('Please provide a location.');
+    if (!formData.city.trim()) {
+      setErrorMsg('Please provide a city.');
       return;
     }
 
@@ -50,7 +51,8 @@ const AddRecommendation = () => {
     if (hasStay) {
       itemsToSubmit.push({
         placeName: stay.placeName,
-        location: formData.location,
+        city: formData.city,
+        state: formData.state,
         category: 'Stays',
         description: stay.description,
         safety: formData.safety,
@@ -59,7 +61,8 @@ const AddRecommendation = () => {
     if (hasCafe) {
       itemsToSubmit.push({
         placeName: cafe.placeName,
-        location: formData.location,
+        city: formData.city,
+        state: formData.state,
         category: 'Cafes',
         description: cafe.description,
         safety: formData.safety,
@@ -68,7 +71,8 @@ const AddRecommendation = () => {
     if (hasThingsToDo) {
       itemsToSubmit.push({
         placeName: thingsToDo.placeName,
-        location: formData.location,
+        city: formData.city,
+        state: formData.state,
         category: 'Things to Do',
         description: thingsToDo.description,
         safety: formData.safety,
@@ -89,7 +93,7 @@ const AddRecommendation = () => {
 
   const handleAddAnother = () => {
     setIsSubmitted(false);
-    setFormData({ name: '', location: '', safety: 'Safe' });
+    setFormData({ name: '', city: '', state: '', safety: 'Safe' });
     setStay({ placeName: '', description: '' });
     setCafe({ placeName: '', description: '' });
     setThingsToDo({ placeName: '', description: '' });
@@ -133,22 +137,31 @@ const AddRecommendation = () => {
 
               <div className="form-row">
                 <div className="form-group half-width">
-                  <label htmlFor="location">Location *</label>
+                  <label htmlFor="city">City *</label>
                   <input 
-                    type="text" id="location" name="location" 
-                    value={formData.location} onChange={handleGeneralChange}
-                    placeholder="e.g. Varkala, Trivandrum"
+                    type="text" id="city" name="city" 
+                    value={formData.city} onChange={handleGeneralChange}
+                    placeholder="e.g. Varkala, Kochi"
                     required
                   />
                 </div>
                 <div className="form-group half-width">
-                  <label htmlFor="safety">Overall Safety Feeling *</label>
-                  <select id="safety" name="safety" value={formData.safety} onChange={handleGeneralChange} required>
-                    <option value="Safe">Safe</option>
-                    <option value="Neutral">Neutral</option>
-                    <option value="Unsafe">Unsafe</option>
-                  </select>
+                  <label htmlFor="state">State <span className="optional-badge">(Optional)</span></label>
+                  <input 
+                    type="text" id="state" name="state" 
+                    value={formData.state} onChange={handleGeneralChange}
+                    placeholder="e.g. Kerala"
+                  />
                 </div>
+              </div>
+
+              <div className="form-group">
+                <label htmlFor="safety">Overall Safety Feeling *</label>
+                <select id="safety" name="safety" value={formData.safety} onChange={handleGeneralChange} required>
+                  <option value="Safe">Safe</option>
+                  <option value="Neutral">Neutral</option>
+                  <option value="Unsafe">Unsafe</option>
+                </select>
               </div>
             </section>
 
