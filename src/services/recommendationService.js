@@ -38,7 +38,7 @@ export const addRecommendation = async (items) => {
       state: item.state || ''
     };
 
-    console.log("FINAL RECOMMENDATION PAYLOAD:", payload);
+    console.log("FINAL PAYLOAD SENT:", payload);
 
     const { error } = await supabase
       .from('recommendations')
