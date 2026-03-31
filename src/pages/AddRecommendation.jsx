@@ -50,7 +50,8 @@ const AddRecommendation = () => {
     const itemsToSubmit = [];
     if (hasStay) {
       itemsToSubmit.push({
-        placeName: stay.placeName,
+        name: formData.name,
+        title: stay.placeName,
         city: formData.city,
         state: formData.state,
         category: 'Stays',
@@ -60,7 +61,8 @@ const AddRecommendation = () => {
     }
     if (hasCafe) {
       itemsToSubmit.push({
-        placeName: cafe.placeName,
+        name: formData.name,
+        title: cafe.placeName,
         city: formData.city,
         state: formData.state,
         category: 'Cafes',
@@ -70,7 +72,8 @@ const AddRecommendation = () => {
     }
     if (hasThingsToDo) {
       itemsToSubmit.push({
-        placeName: thingsToDo.placeName,
+        name: formData.name,
+        title: thingsToDo.placeName,
         city: formData.city,
         state: formData.state,
         category: 'Things to Do',

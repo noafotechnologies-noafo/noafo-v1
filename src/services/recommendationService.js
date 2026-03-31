@@ -28,24 +28,27 @@ export const getTotalRecommendationsCount = async () => {
 export const addRecommendation = async (items) => {
   const insertData = Array.isArray(items) ? items : [items];
   
-  const { data, error } = await supabase
-    .from('recommendations')
-    .insert(
-      insertData.map(item => ({
-        place_name: item.placeName,
-        city: item.city,
-        state: item.state,
-        category: item.category,
-        description: item.description,
-        safety: item.safety,
-        // recommended_by defaults to 1 based on DB schema
-      }))
-    )
-    .select();
+  for (const item of insertData) {
+    const payload = {
+      name: item.name || 'Anonymous',
+      title: item.title || item.placeName || '',
+      description: item.description || '',
+      category: item.category || '',
+      city: item.city || '',
+      state: item.state || ''
+    };
 
-  if (error) {
-    console.error('Error inserting recommendation(s) into Supabase:', error);
-    throw error;
+    console.log("FINAL RECOMMENDATION PAYLOAD:", payload);
+
+    const { error } = await supabase
+      .from('recommendations')
+      .insert([payload]);
+
+    if (error) {
+      console.error("SUPABASE INSERT ERROR:", error);
+      throw error;
+    }
   }
-  return data;
+
+  return true;
 };
